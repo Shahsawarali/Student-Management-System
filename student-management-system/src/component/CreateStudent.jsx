@@ -14,9 +14,11 @@ function CreateStudent({getStudents}) {
     try {
       setIsCreatingStudent(true)
       await addDoc(collection(db,'students'),{
+        rollno: Number(rollno),
         name: name,
         age: Number(age)
       })
+      setRollno('')
       setName('')
       setAge('')
       setIsCreatingStudent(false)
@@ -33,7 +35,7 @@ function CreateStudent({getStudents}) {
      <form onSubmit={handleSubmit} className="form">
 
         <input type="number" value={rollno} onChange={(e)=>setRollno(e.target.value)}
-         placeholder="Enter Your Age" />
+         placeholder="Enter Your Roll No" />
         <input type="text" value={name} onChange={(e)=>setName(e.target.value)}
          placeholder="Enter Your Name" required />
         <input type="number" value={age} onChange={(e)=>setAge(e.target.value)}

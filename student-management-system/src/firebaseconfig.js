@@ -4,14 +4,13 @@ import { getFirestore } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC3fpG0prrHbGadFm4FgQrUjQ7TUVvTg7E",
-  authDomain: "student-management-syste-c700d.firebaseapp.com",
-  projectId: "student-management-syste-c700d",
-  storageBucket: "student-management-syste-c700d.appspot.com",
-  messagingSenderId: "994798697796",
-  appId: "1:994798697796:web:9518bb535413137a1ceb11"
+  apiKey: "AIzaSyA-2bZV7OpPtQ0hHqyl7A6jnYpGEC4v5VY",
+  authDomain: "student-management-syste-ce9fc.firebaseapp.com",
+  projectId: "student-management-syste-ce9fc",
+  storageBucket: "student-management-syste-ce9fc.appspot.com",
+  messagingSenderId: "789102346151",
+  appId: "1:789102346151:web:67597a74253a02f2a20082"
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
