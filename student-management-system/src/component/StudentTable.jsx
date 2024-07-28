@@ -6,8 +6,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
-
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 
 export default function StudentTable({students}) {
   return (
@@ -32,7 +32,10 @@ export default function StudentTable({students}) {
               </TableCell>
               <TableCell align="center">{student.name}</TableCell>
               <TableCell align="center">{student.age}</TableCell>
-              <TableCell align="right">Edit-icon and delete icon </TableCell>
+              <TableCell align="right">
+                <EditIcon style={{cursor:'pointer',color:'#007bff',marginRight:10}}/>
+              <DeleteForeverIcon style={{cursor:'pointer',color:'crimson'}}/>
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>
