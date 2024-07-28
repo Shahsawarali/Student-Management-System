@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "student-management-system",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

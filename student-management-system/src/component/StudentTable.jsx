@@ -8,8 +8,25 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import {deleteDoc, doc} from 'firebase/firestore'
+import {db} from '../firebaseconfig'
 
-export default function StudentTable({students}) {
+export default function StudentTable({students ,setStudents}) {
+    //update student
+    function handleUpdateSTudent(studentId){
+        alert(studentId)
+    }
+
+
+    //delete student
+    async function handleDeleteSTudent(studentId){
+       const studentDoc = doc(db, 'student',studentId)
+       await deleteDoc(studentDoc)
+       setStudents(students.filter((student)=>student.id !==studentId))
+
+       //setStudents
+    }
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -33,8 +50,8 @@ export default function StudentTable({students}) {
               <TableCell align="center">{student.name}</TableCell>
               <TableCell align="center">{student.age}</TableCell>
               <TableCell align="right">
-                <EditIcon style={{cursor:'pointer',color:'#007bff',marginRight:10}}/>
-              <DeleteForeverIcon style={{cursor:'pointer',color:'crimson'}}/>
+                <EditIcon onClick={()=>handleUpdateSTudent(student.id)} style={{cursor:'pointer',color:'#007bff',marginRight:10}}/>
+              <DeleteForeverIcon onClick={()=>handleDeleteSTudent(student.id)} style={{cursor:'pointer',color:'crimson'}}/>
               </TableCell>
             </TableRow>
           ))}
